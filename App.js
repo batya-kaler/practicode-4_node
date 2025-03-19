@@ -1,12 +1,14 @@
 import express from 'express'
 import bodyParser from 'body-parser'
+import axios from 'axios';
+
 const app = express()
 const port = 3001
 app.use(bodyParser.json())
-app.get('', (req, res) => {
+app.get('/services', (req, res) => {
     res.send('👍✌❤😂😊🌹👏')
 })
-app.get('/services', async (req, res) => {
+app.get('', async (req, res) => {
     try {
         const response = await axios.get('https://api.render.com/v1/services', {
             headers: {
